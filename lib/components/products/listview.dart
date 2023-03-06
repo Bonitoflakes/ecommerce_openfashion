@@ -33,133 +33,154 @@ class _ProductListViewState extends State<ProductListView> {
         };
 
     return Container(
-      margin: EdgeInsets.only(top: 16, left: 16, right: 16),
-      child: Column(
+      padding: EdgeInsets.only(top: 27, left: 16, right: 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                // width: 100,
-                height: 185,
-                child: Image.asset(
-                  'assets/images/Frame.png',
-                  fit: BoxFit.contain,
-                ),
+          Container(
+            child: Image.asset(
+              'assets/images/img_rectangle344_220x165.png',
+              fit: BoxFit.cover,
+              // width: 100,
+              height: 133,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(
+                top: 7,
+                left: 12,
               ),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.only(top: 7, left: 12, right: 12),
-                  // decoration:
-                  //     BoxDecoration(border: Border.all(color: Colors.blueAccent)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'lammer'.toUpperCase(),
+                    style: AppTextStyles.subTitleS
+                        .copyWith(color: AppColor.titleColor),
+                  ),
+                  Text(
+                    'Recycle Boucle Knit Cardigan Pink',
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.bodyM
+                        .copyWith(color: AppColor.labelColor),
+                  ),
+                  Text(
+                    '\$120'.toUpperCase(),
+                    style: AppTextStyles.price
+                        .copyWith(color: AppColor.secondaryColor),
+                  ),
+                  SizedBox(
+                    height: 11,
+                  ),
+                  Row(
                     children: [
-                      Text(
-                        'lammer'.toUpperCase(),
-                        style: AppTextStyles.subTitleS
-                            .copyWith(color: AppColor.titleColor),
-                      ),
-                      Text(
-                        'Recycle Boucle Knit Cardigan Pink',
-                        style: AppTextStyles.bodyM
-                            .copyWith(color: AppColor.labelColor),
-                      ),
-                      Text(
-                        '\$120'.toUpperCase(),
-                        style: AppTextStyles.price
-                            .copyWith(color: AppColor.primaryColor),
-                      ),
-                      SizedBox(
-                        height: 11,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset('assets/images/Star.svg', width: 24),
-                          Text(
-                            '4.8 Ratings',
-                            style: AppTextStyles.bodyM
-                                .copyWith(color: AppColor.labelColor),
-                          ),
-                        ],
-                      ),
                       SizedBox(
                         height: 16,
+                        width: 16,
+                        child: SvgPicture.asset(
+                          'assets/images/Star.svg',
+                          height: 16,
+                          width: 16,
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(children: [
-                            Text(
-                              'Size',
-                              style: AppTextStyles.bodyS
-                                  .copyWith(color: AppColor.labelColor),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Container(
-                              alignment: Alignment(0, -1),
-                              constraints:
-                                  BoxConstraints(minHeight: 30, minWidth: 30),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: AppColor.placeholderColor, width: 1),
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: Text('S'),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Container(
-                              alignment: Alignment(0, -1),
-                              constraints:
-                                  BoxConstraints(minHeight: 30, minWidth: 30),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: AppColor.placeholderColor, width: 1),
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: Text('M'),
-                            ),
-                            SizedBox(
-                              width: 6,
-                            ),
-                            Container(
-                              alignment: Alignment(0, -1),
-                              constraints:
-                                  BoxConstraints(minHeight: 30, minWidth: 30),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: AppColor.placeholderColor, width: 1),
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: Text('L'),
-                            ),
-                          ]),
-                          GestureDetector(
-                            onTap: toggleLike,
-                            child: Container(
-                                margin: EdgeInsets.only(bottom: 10),
-                                child: SvgPicture.asset(
-                                  'assets/images/Heart.svg',
-                                  colorFilter: _isLiked
-                                      ? ColorFilter.mode(
-                                          AppColor.secondaryColor,
-                                          BlendMode.srcIn)
-                                      : null,
-                                )),
-                          )
-                        ],
-                      )
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        '4.8 Ratings',
+                        style: AppTextStyles.bodyS
+                            .copyWith(color: AppColor.labelColor),
+                      ),
                     ],
                   ),
-                ),
-              )
-            ],
-          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        child: Row(children: [
+                          Text(
+                            'Size',
+                            style: AppTextStyles.bodyS
+                                .copyWith(color: AppColor.labelColor),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            alignment: Alignment(0, -0.5),
+                            constraints:
+                                BoxConstraints(minHeight: 24, minWidth: 24),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(222, 222, 222, 222),
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Text(
+                              'S',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            alignment: Alignment(0, -0.5),
+                            constraints:
+                                BoxConstraints(minHeight: 24, minWidth: 24),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(222, 222, 222, 222),
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Text(
+                              'M',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Container(
+                            alignment: Alignment(0, -0.5),
+                            constraints:
+                                BoxConstraints(minHeight: 24, minWidth: 24),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(222, 222, 222, 222),
+                                  width: 1),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Text(
+                              'L',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                        ]),
+                      ),
+                      GestureDetector(
+                        onTap: toggleLike,
+                        child: Container(
+                            margin: EdgeInsets.only(bottom: 10),
+                            child: SvgPicture.asset(
+                              'assets/images/Heart.svg',
+                              colorFilter: _isLiked
+                                  ? ColorFilter.mode(
+                                      AppColor.secondaryColor, BlendMode.srcIn)
+                                  : ColorFilter.mode(
+                                      AppColor.lineColor, BlendMode.srcIn),
+                            )),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
