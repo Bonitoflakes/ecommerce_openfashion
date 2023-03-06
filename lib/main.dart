@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
-        fontFamily: 'TensorSans',
+        fontFamily: 'TenorSans',
         textTheme: const TextTheme(
           titleLarge: TextStyle(fontSize: 18, height: 2.22, letterSpacing: 4),
           titleMedium: TextStyle(fontSize: 16, height: 1.5),

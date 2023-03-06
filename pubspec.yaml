@@ -24,7 +24,7 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: TensorSans
+    - family: TenorSans
       fonts:
         - asset: assets/fonts/TenorSans-Regular.ttf
           weight: 400
